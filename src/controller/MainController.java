@@ -1,24 +1,23 @@
 package controller;
 
-import services.ServiceFactory;
-import services.ServiceFactoryImpl;
 import services.spec.NameCaluculateService;
+
+import com.google.inject.Inject;
 
 public class MainController {
 
 	private static final String FILE_NAME = "names.txt";
 	
-	private final ServiceFactory serviceFactory;
+	private final NameCaluculateService service;
 
-	public MainController() {
-		this.serviceFactory = new ServiceFactoryImpl();
+	@Inject
+	public MainController(NameCaluculateService service) {
+		this.service = service;
 	}
 
 	public void execute() {
 		System.out.println("Start");
-		NameCaluculateService service = serviceFactory.getNameCaluculateService();
 		service.calcNames(FILE_NAME);
-		
 		System.out.println("Done");
 	}
 }
