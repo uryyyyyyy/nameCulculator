@@ -20,7 +20,7 @@ public class NameCaluculateServiceImpl implements NameCaluculateService {
 	@Override
 	public void calcNames(String fileName) {
 		System.out.println("Service");
-		List<String> nameList = dao.getNames();
+		List<String> nameList = dao.getNames("names.txt");
 		return;
 	}
 }
