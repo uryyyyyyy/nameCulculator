@@ -28,7 +28,7 @@ public class CharactorCaluculator {
 			String name) {
 		int count = 0;
 		for(char s :name.toCharArray()){
-			count += characterCountedMap.get(s);
+			count += characterCountedMap.get(s); //assert notNull
 		}
 		return count;
 	}

@@ -8,8 +8,10 @@ import util.file.FileAllListWriter;
 import dao.spec.NameDao;
 import dto.NameWithValue;
 
+//scope狭くできないかな？
 public class NameDaoImpl implements NameDao{
 
+	//privateだとGuiceが認識しない。
 	NameDaoImpl() {
 		System.out.println("NameDaoImpl injected");
 	}
