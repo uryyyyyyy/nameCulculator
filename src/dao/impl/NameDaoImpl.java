@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 
 import lombok.Cleanup;
 import dao.spec.NameDao;
+import dto.NameWithValue;
 
 public class NameDaoImpl implements NameDao{
 
@@ -50,4 +51,10 @@ public class NameDaoImpl implements NameDao{
 		return nameList;
 	}
 
+	@Override
+	public void save(List<NameWithValue> results) {
+		for(NameWithValue dto : results){
+			System.out.println(dto.name + " " + dto.value);
+		}
+	}
 }
