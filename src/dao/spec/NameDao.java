@@ -8,6 +8,6 @@ public interface NameDao {
 
 	public List<String> getNames(String fileName);
 
-	public void save(List<NameWithValue> results);
+	void save(List<NameWithValue> results, String fileName);
 
 }

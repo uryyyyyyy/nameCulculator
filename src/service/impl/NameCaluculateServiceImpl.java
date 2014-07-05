@@ -28,7 +28,7 @@ public class NameCaluculateServiceImpl implements NameCaluculateService {
 		Map<Character, Integer> characterCountedMap = CharactorCounter.countEachCharacter(nameList);
 		Collections.sort(nameList);
 		List<NameWithValue> results= CharactorCaluculator.calcEachString(nameList, characterCountedMap);
-		dao.save(results);
+		dao.save(results, "score.txt");
 		return;
 	}
 }

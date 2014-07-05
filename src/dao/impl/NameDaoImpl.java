@@ -1,12 +1,17 @@
 package dao.impl;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import lombok.Cleanup;
 import dao.spec.NameDao;
@@ -30,7 +35,8 @@ public class NameDaoImpl implements NameDao{
 	}
 
 	private List<String> readAllLine(String fileName) throws IOException {
-		@Cleanup BufferedReader br = new BufferedReader(new FileReader(new File(fileName)));
+		@Cleanup InputStream in = new FileInputStream(fileName);
+		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		List<String> strList = new ArrayList<>();
 		String str = br.readLine();
 		while(str != null){
@@ -51,9 +57,17 @@ public class NameDaoImpl implements NameDao{
 	}
 
 	@Override
-	public void save(List<NameWithValue> results) {
-		for(NameWithValue dto : results){
-			System.out.println(dto.name + " " + dto.value);
+	public void save(List<NameWithValue> results, String fileName) {
+		try {
+			@Cleanup OutputStream out = new FileOutputStream(fileName);
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(out)));
+			for(NameWithValue dto : results){
+				pw.println(dto.name + " " + dto.value);
+			}
+			pw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 }
