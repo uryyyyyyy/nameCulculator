@@ -24,7 +24,7 @@ public class CharactorCounter {
 		if(value == null){
 			map.put(s, 1);
 		}else{
-		map.put(s, value + 1);
+		map.put(s, value++);
 		}
 	}
 

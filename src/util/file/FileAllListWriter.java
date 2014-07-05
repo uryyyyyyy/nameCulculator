@@ -3,7 +3,6 @@ package util.file;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.List;
@@ -14,11 +13,11 @@ public class FileAllListWriter {
 
 	}
 
+	@SuppressWarnings("null")
 	public static boolean writeAllList(String fileName, List<String> outputs) {
-		OutputStream out;
+		PrintWriter pw = null;
 		try {
-			out = new FileOutputStream(fileName);
-			PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(out)));
+			pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName))));
 			for(String str : outputs){
 				pw.println(str);
 			}
@@ -26,6 +25,7 @@ public class FileAllListWriter {
 			return true;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			pw.close();
 			return false;
 		}
 	}
