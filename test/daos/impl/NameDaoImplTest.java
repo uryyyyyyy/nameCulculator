@@ -1,4 +1,4 @@
-package controller;
+package daos.impl;
 
 import static org.junit.Assert.fail;
 
@@ -7,14 +7,15 @@ import org.junit.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+import daos.spec.NameDao;
 import di.DiModule;
 
-public class MainControllerTest {
+public class NameDaoImplTest {
 
 	@Test
 	public void test() {
 		Injector injector = Guice.createInjector(new DiModule());
-		MainController c = injector.getInstance(MainController.class);
+		NameDao c = injector.getInstance(NameDaoImpl.class);
 		fail("Not yet implemented");
 	}
 
