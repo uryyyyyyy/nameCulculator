@@ -43,9 +43,8 @@ public class NameDaoImpl implements NameDao{
 	private List<String> toNameList(List<String> strList) {
 		List<String> nameList = new ArrayList<>();
 		for(String str : strList){
-			StringTokenizer st = new StringTokenizer(str,"\"");
-			while(st.hasMoreTokens()){
-				nameList.add(st.nextToken());
+			for(String s : str.split(",")){
+				nameList.add(s.replace("\"", ""));
 			}
 		}
 		return nameList;
