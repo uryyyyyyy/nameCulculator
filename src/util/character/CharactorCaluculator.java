@@ -12,7 +12,7 @@ public class CharactorCaluculator {
 		
 	}
 
-	public static List<NameWithValue> calcEachString(List<String> nameList,
+	public static List<NameWithValue> calcEachNameCount(List<String> nameList,
 			Map<Character, Integer> characterCountedMap) {
 		List<NameWithValue> list = new ArrayList<>(nameList.size());
 		

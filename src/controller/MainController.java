@@ -7,7 +7,7 @@ import com.google.inject.Inject;
 public class MainController {
 
 	private static final String FILE_NAME = "names.txt";
-	
+
 	private final NameCaluculateService service;
 
 	@Inject
