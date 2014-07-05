@@ -1,12 +1,12 @@
-package services.impl;
+package service.impl;
 
 import java.util.List;
 
-import services.spec.NameCaluculateService;
+import service.spec.NameCaluculateService;
 
 import com.google.inject.Inject;
 
-import daos.spec.NameDao;
+import dao.spec.NameDao;
 
 public class NameCaluculateServiceImpl implements NameCaluculateService {
 	 

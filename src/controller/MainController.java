@@ -1,6 +1,6 @@
 package controller;
 
-import services.spec.NameCaluculateService;
+import service.spec.NameCaluculateService;
 
 import com.google.inject.Inject;
 

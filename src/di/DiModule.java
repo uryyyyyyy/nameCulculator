@@ -1,13 +1,13 @@
 package di;
 
-import services.impl.NameCaluculateServiceImpl;
-import services.spec.NameCaluculateService;
+import service.impl.NameCaluculateServiceImpl;
+import service.spec.NameCaluculateService;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
 
-import daos.impl.NameDaoImpl;
-import daos.spec.NameDao;
+import dao.impl.NameDaoImpl;
+import dao.spec.NameDao;
 
 public class DiModule extends AbstractModule{
 

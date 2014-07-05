@@ -1,4 +1,4 @@
-package services.spec;
+package service.spec;
 
 
 public interface NameCaluculateService {

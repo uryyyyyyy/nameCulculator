@@ -1,8 +1,8 @@
-package daos.impl;
+package dao.impl;
 
 import java.util.List;
 
-import daos.spec.NameDao;
+import dao.spec.NameDao;
 
 public class NameDaoImpl implements NameDao{
 

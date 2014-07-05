@@ -1,4 +1,4 @@
-package daos.impl;
+package dao.impl;
 
 import static org.junit.Assert.fail;
 
@@ -7,7 +7,8 @@ import org.junit.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import daos.spec.NameDao;
+import dao.impl.NameDaoImpl;
+import dao.spec.NameDao;
 import di.DiModule;
 
 public class NameDaoImplTest {

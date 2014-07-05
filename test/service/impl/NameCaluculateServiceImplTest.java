@@ -1,10 +1,11 @@
-package services.impl;
+package service.impl;
 
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import services.spec.NameCaluculateService;
+import service.impl.NameCaluculateServiceImpl;
+import service.spec.NameCaluculateService;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;

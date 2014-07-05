@@ -1,4 +1,4 @@
-package daos.spec;
+package dao.spec;
 
 import java.util.List;
 
