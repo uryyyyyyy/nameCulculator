@@ -12,6 +12,5 @@
 	<classpathentry kind="lib" path="lib/javax.inject.jar"/>
 	<classpathentry kind="lib" path="lib/aopalliance.jar"/>
 	<classpathentry kind="lib" path="lib/mockito-all-1.9.5.jar"/>
-	<classpathentry kind="lib" path="lib/lombok.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

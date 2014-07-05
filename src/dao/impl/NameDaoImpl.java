@@ -1,17 +1,8 @@
 package dao.impl;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.Cleanup;
 import util.file.FileAllLineReader;
 import util.file.FileAllListWriter;
 import dao.spec.NameDao;
