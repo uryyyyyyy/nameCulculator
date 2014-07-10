@@ -1,10 +1,11 @@
-package util.character;
+package util.caluculate;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,17 @@ public class CharactorCaluculatorTest {
 		assertThat(resultList.get(0).name, is("Str1"));
 		assertThat(resultList.get(3).value, is(52L));
 		assertThat(resultList.get(3).name, is("Str4"));
+	}
+	
+	@Test
+	public void test2() {
+		Map<Character, Integer> map = CharactorCaluculator.countEachCharacter(Arrays.asList("abba","asta","hoge","fuga"));
+		
+		assertThat(map.get('a'), is(5));
+		assertThat(map.get('b'), is(2));
+		assertThat(map.get('h'), is(1));
+		assertThat(map.get('か'), nullValue());
+		assertThat(map.get('A'), nullValue());
 	}
 
 }

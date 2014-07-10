@@ -6,6 +6,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,14 +28,14 @@ public class NameDaoImplTest {
 	}
 	
 	@Test
-	public void test2() {
+	public void test2() throws IOException {
 		NameDao mockDao = mock(NameDao.class);
 		when(mockDao.getNames("names.txt")).thenReturn(new ArrayList<String>());
 		fail("Not yet implemented");
 	}
 	
 	@Test
-	public void test3() {
+	public void test3() throws IOException {
 		NameDaoImpl daoImpl = new NameDaoImpl();
 		List<String > strList = daoImpl.getNames("test_names.txt");
 		assertThat(strList.get(0), is("MARY"));

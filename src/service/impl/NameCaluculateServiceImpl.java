@@ -1,12 +1,10 @@
 package service.impl;
 
-import java.util.Collections;
+import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 import service.spec.NameCaluculateService;
-import util.character.CharactorCaluculator;
-import util.character.CharactorCounter;
+import util.caluculate.CharactorCaluculator;
 
 import com.google.inject.Inject;
 
@@ -22,14 +20,17 @@ public class NameCaluculateServiceImpl implements NameCaluculateService {
 		System.out.println("NameCaluculateServiceImpl injected");
 		this.dao = dao;
 	}
-	
+
 	@Override
 	public void calcNames(String fileName) {
-		List<String> nameList = dao.getNames("names.txt");
-		Map<Character, Integer> characterCountedMap = CharactorCounter.countEachCharacter(nameList);
-		Collections.sort(nameList);
-		List<NameWithValue> results= CharactorCaluculator.calcEachNameCount(nameList, characterCountedMap);
-		dao.save(results, "score.txt");
+		try{
+			List<String> nameList = dao.getNames("names.txt");
+			List<NameWithValue> results = CharactorCaluculator.method(nameList);
+			dao.save(results, "score.txt");
+		}catch(IOException e){
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
 		return;
 	}
 }
